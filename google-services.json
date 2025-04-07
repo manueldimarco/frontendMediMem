@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "566982767392",
+    "project_id": "medimem-d3eb6",
+    "storage_bucket": "medimem-d3eb6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566982767392:android:f4e0960da02f0e95835d45",
+        "android_client_info": {
+          "package_name": "com.manueldimarco.MediMem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG_Vv-0zlm6sr3wRFD1e5D4Mqy8nutqoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

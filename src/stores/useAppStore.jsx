@@ -1,0 +1,96 @@
+import { create } from 'zustand'
+
+const useAppStore = create((set) => ({
+  usuarioId:"",
+  jwt:"",
+  login: (usuarioId,jwt) => set({ usuarioId:usuarioId,jwt:jwt }),
+  logout: () => set({ usuarioId:"",jwt:""}),
+  tokenExpo:"",
+  setTokenExpo: (tokenExpo) => set({ tokenExpo:tokenExpo }),
+  name: "",
+  username:"",
+  correo:"",
+  tipoUsuario:"",
+  telefono:"",
+  fotoUrl:"",
+  fotoUrlCuidador:"",
+  nameCuidador:"",
+  usernameCuidador:"",
+  telefonoCuidador:"",
+  usuarioCuidadorId:"",
+  tokenExpoCuidador:"",
+  setTokenExpoCuidador: (tokenExpoCuidador) => set({ tokenExpoCuidador:tokenExpoCuidador}),
+  setCuidadorData: (cuidadorData) => set(() => ({
+    fotoUrlCuidador: cuidadorData.fotoUrlCuidador || "",
+    nameCuidador: cuidadorData.nameCuidador || "",
+    usernameCuidador: cuidadorData.usernameCuidador || "",
+    telefonoCuidador: cuidadorData.telefonoCuidador || "",
+    usuarioCuidadorId: cuidadorData.usuarioCuidadorId || "",
+  })),
+  clearCuidadorData: () => set(() => ({
+    fotoUrlCuidador: "",
+    nameCuidador: "",
+    usernameCuidador:"",
+    telefonoCuidador: "",
+    usuarioCuidadorId:"",
+    tokenExpoCuidador:""
+  })),
+  fotoUrlAsociado:"",
+  nameAsociado:"",
+  usuarioCuidadoId:"",
+  setAsociadoData: (asociadoData) => set(() => ({
+    fotoUrlAsociado: asociadoData.fotoUrlAsociado || "",
+    nameAsociado: asociadoData.nameAsociado || "",
+    usuarioCuidadoId: asociadoData.usuarioCuidadoId || "",
+  })),
+  clearAsociadoData: () => set(() => ({
+    fotoUrlAsociado: "",
+    nameAsociado: "",
+    usuarioCuidadoId: "",
+  })),
+  usuariosAsociados:[],
+  setUsuariosAsociados: (nuevosUsuarios) => set({ usuariosAsociados: nuevosUsuarios }),
+  setUserData: (newData) => set(() => ({
+    name: newData.name || "",
+    username: newData.username || "",
+    correo: newData.correo || "",
+    tipoUsuario:newData.tipoUsuario || "",
+    fotoUrl:newData.fotoUrl || "",
+    telefono:newData.telefono || "",
+    usuariosAsociados:newData.usuariosAsociados || "",
+  })),
+  clearUserData: () => set(() => ({
+    name: "",
+    username: "",
+    correo: "",
+    tipoUsuario:"",
+    fotoUrl:"",
+    telefono:"",
+    usuariosAsociados:"",
+    tomas:[],
+    medicamentos:[]
+  })),
+  tomas: [],  
+  setTomas: (nuevasTomas) => set({ tomas: nuevasTomas }),
+  agregarToma: (nuevaToma) => set((state) => ({ tomas: [...state.tomas, nuevaToma] })),
+  medicamentos: [],
+  setMedicamentos: (nuevosMedicamentos) => set({ medicamentos: nuevosMedicamentos }),
+  agregarMedicamento: (nuevoMedicamento) => set((state) => ({ medicamentos: [...state.medicamentos, nuevoMedicamento] })),
+  iniciandoApp:true,
+  setIniciandoApp: (iniciandoApp) => set({ iniciandoApp:iniciandoApp }),
+  usuarioChatUsername:null,
+  usuarioChatId:null,
+  setUsuarioChat: (usuarioChat) => set({ usuarioChatUsername:usuarioChat.usuarioChatUsername,usuarioChatId:usuarioChat.usuarioChatId }),
+  cleanUsuarioChat:() => set(() => ({
+    usuarioChatUsername:null,
+    usuarioChatId:null,
+  })),
+  chatFinalizado:false,
+  setChatFinalizado: (chatFinalizado) => {
+    set({ chatFinalizado:chatFinalizado })
+  },
+  alertaOn:false,
+  setAlertaOn: (alertaOn) => set({ alertaOn:alertaOn })
+}))
+
+export default useAppStore
