@@ -29,9 +29,7 @@ const Resumen = ({navigation,route}) => {
 
     const obtenerFechaHora = () => {
         const fecha = new Date();
-        const offset = -3 * 60; 
-        const fechaUTC3 = new Date(fecha.getTime() + offset * 60 * 1000);
-        return fechaUTC3.toISOString().slice(0, 19); 
+        return fecha.toISOString().slice(0, 19);
       };
     const fechaHora = obtenerFechaHora();
 
