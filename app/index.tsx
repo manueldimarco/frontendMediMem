@@ -189,7 +189,7 @@ export default function index() {
     const validarToken = async (jwt: string,userId: string) => {
       try {
         console.log()
-          const response = await fetch('http://192.168.100.9:8080/usuarios/validarJWT', {
+          const response = await fetch('https://backendmedimem.onrender.com/usuarios/validarJWT', {
               method: 'GET',
               headers: {
                   'Authorization': 'Bearer ' + jwt,
@@ -275,7 +275,7 @@ export default function index() {
     const obtenerUsuario= async (jwt:string,userId: string) => {
       try {
         console.log("Obteniendo usuario con id "+userId)
-        const response = await fetch(`http://192.168.100.9:8080/usuarios/${userId}`, {
+        const response = await fetch(`https://backendmedimem.onrender.com/usuarios/${userId}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${jwt}`, 
@@ -316,7 +316,7 @@ export default function index() {
     const fetchTomas= async (userId: string) => {
       console.log("OBTENIENDO TOMAS")
       try {
-        const response = await fetch(`http://192.168.100.9:8080/tomas/${userId}`, {
+        const response = await fetch(`https://backendmedimem.onrender.com/tomas/${userId}`, {
           headers: {
             'Authorization': `Bearer ${jwt}`, 
             'Content-Type': 'application/json', 
