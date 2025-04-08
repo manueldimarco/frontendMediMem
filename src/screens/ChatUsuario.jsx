@@ -30,7 +30,7 @@ const ChatUsuario = ({navigation,route}) => {
     useEffect(() => {
         setIsLoading(true);
         sendPushNotification("START");
-        const ws = new WebSocket(`wss://backendmedimem.onrender.com/chat?userId=${usuarioId}`);
+        const ws = new WebSocket(`ws://192.168.100.9:8080/chat?userId=${usuarioId}`);
 
         ws.onopen = () => console.log('Conectado al WebSocket');
         ws.onmessage = (event) => {

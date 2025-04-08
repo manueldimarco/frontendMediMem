@@ -7,7 +7,7 @@ import { Alert } from 'react-native';
 const resetearToken = async (usuarioId) => {
     try {
         console.log("Intentando resetear el tokenExpo al usuario con id "+usuarioId)
-        const response = await fetch("https://backendmedimem.onrender.com/usuarios/"+usuarioId+"/resetearToken", {
+        const response = await fetch("http://192.168.100.9:8080/usuarios/"+usuarioId+"/resetearToken", {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',

@@ -4,7 +4,7 @@ export const HostContext=createContext();
 
 const HostContextProvider=({children})=>{
 
-    const [host, setHost] = useState("https://backendmedimem.onrender.com"); 
+    const [host, setHost] = useState("http://192.168.100.9:8080"); 
 
     return(
         <HostContext.Provider value={host}>

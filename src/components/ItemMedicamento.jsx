@@ -23,7 +23,7 @@ const ItemMedicamento=(props)=>{
                                     <Image style={style.image} source={require("../../assets/images/DISPONIBLE.png")}/>
                                     <Text style={style.text}>Hay {props.medicamento.contenidoActual} {props.medicamento.tipo==="JARABE" ? "mililitros" : props.medicamento.tipo.toLowerCase()}</Text>
                                 </>
-                            ) : 5 > props.medicamento.contenidoActual && props.medicamento.contenidoActual > 0 ? (
+                            ) : props.medicamento.contenidoActual > 0 ? (
                                 <>
                                     <Image style={style.image} source={require("../../assets/images/REPONE.png")}/>
                                     <Text style={style.text}>Hay {props.medicamento.contenidoActual} {props.medicamento.contenidoActual===1 ? props.medicamento.tipo?.slice(0, -1).toLowerCase() : props.medicamento.tipo?.toLowerCase() || ""}</Text>
